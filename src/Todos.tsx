@@ -140,8 +140,12 @@ export default class TodoList extends React.Component<{}, State> {
               cursor: "pointer"
             }}
           >
-            {todo.name}{" "}
-            <button onClick={() => this.toggleTodo(todo)}>Toggle</button>
+            {todo.name}
+            {!todo.done && (
+              <button onClick={() => this.toggleTodo(todo)}>
+                Mark as done
+              </button>
+            )}
             <button onClick={() => this.deleteTodo(todo)}>Delete</button>
           </li>
         ))}
