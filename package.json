@@ -7,10 +7,13 @@
     "@types/node": "11.11.0",
     "@types/react": "16.8.7",
     "@types/react-dom": "16.8.2",
+    "aws-amplify": "^1.1.22",
+    "aws-amplify-react": "^2.3.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.3333",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +29,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/enzyme": "^3.9.0",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/uuid": "^3.4.4",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5"
+  }
 }
