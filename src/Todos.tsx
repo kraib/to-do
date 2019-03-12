@@ -130,23 +130,44 @@ export default class TodoList extends React.Component<{}, State> {
     if (this.state.error) return <h3>Error</h3>;
     if (this.state.loading || !this.state.items) return <h3>Loading...</h3>;
     return (
-      <ul>
+      <ul className="list-group">
         {this.state.items.map(todo => (
           <li
             key={todo.id}
-            onClick={() => this.toggleTodo(todo)}
             style={{
-              textDecoration: `${todo.done ? "line-through" : ""}`,
-              cursor: "pointer"
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between"
             }}
+            className="list-group-item"
+            onClick={() => this.toggleTodo(todo)}
           >
-            {todo.name}
-            {!todo.done && (
-              <button onClick={() => this.toggleTodo(todo)}>
-                Mark as done
+            <div
+              style={{
+                textDecoration: `${todo.done ? "line-through" : ""}`
+              }}
+            >
+              {todo.name}
+            </div>
+            <div className="">
+              {!todo.done && (
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={() => this.toggleTodo(todo)}
+                >
+                  Mark as done
+                </button>
+              )}
+              <button
+                type="button"
+                style={{ marginLeft: 10 }}
+                className="btn btn-danger"
+                onClick={() => this.deleteTodo(todo)}
+              >
+                Delete
               </button>
-            )}
-            <button onClick={() => this.deleteTodo(todo)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>

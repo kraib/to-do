@@ -36,12 +36,24 @@ export default class AddTodoForm extends React.Component<{}, State> {
     const { _updateValue, _handleSubmit } = this;
     return (
       <form onSubmit={_handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={e => _updateValue(e.target.value)}
-        />
-        <button type="submit">Add todo !</button>
+        <div className="input-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Type your todo"
+            value={value}
+            onChange={e => _updateValue(e.target.value)}
+          />
+          <div className="input-group-append">
+            <button
+              className="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              Add tod !
+            </button>
+          </div>
+        </div>
       </form>
     );
   }
