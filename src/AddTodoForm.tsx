@@ -50,7 +50,7 @@ export default class AddTodoForm extends React.Component<{}, State> {
               type="submit"
               id="button-addon2"
             >
-              Add tod !
+              Add todo !
             </button>
           </div>
         </div>
